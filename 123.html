@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Sankranti Wishes</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: url('https://example.com/sankranti-background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            color: #ff5722;
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        button {
+            background-color: #ff5722;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #e64a19;
+        }
+        .message {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #4caf50;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Happy Sankranti!</h1>
+        <input type="text" id="nameInput" placeholder="Enter your name" />
+        <button onclick="sendWishes()">Send Wishes</button>
+        <div class="message" id="message"></div>
+    </div>
+
+    <script>
+        function sendWishes() {
+            const name = document.getElementById('nameInput').value;
+            const messageElement = document.getElementById('message');
+
+            if (name.trim() === "") {
+                messageElement.textContent = "Please enter your name.";
+                return;
+            }
+
+            const phoneNumber = prompt("Enter the phone number:");
+
+            if (phoneNumber.trim() === "" || !/^[0-9]{10}$/.test(phoneNumber)) {
+                messageElement.textContent = "Invalid phone number. Please enter a 10-digit number.";
+                return;
+            }
+
+            messageElement.textContent = `Happy Sankranti to ${name} (Phone: ${phoneNumber})!`;
+        }
+    </script>
+</body>
+</html>
